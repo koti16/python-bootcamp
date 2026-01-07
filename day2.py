@@ -1,77 +1,141 @@
-#p6: km-> miles
-'''kilometer = float(input("enter distance in kilometers:"))
-#conversion factor: 1 kilometer = 0.621371 miles
-conversion_factor = 0.621371 
-miles = kilometer*conversion_factor
-print(f"kilometers is equal to {miles} miles")'''
-#p7:convert form celsuies to fahrenhit.
-#celsius=float(input("Enter themperature in celsius:"))
+#p1
+'''he included code stub will read an integer, , from STDIN.
 
-# conversion formula : fahernheit = (celsius*9/5)+32
-'''fahrenheit = (celsius*9/5)+32
-print(f"fahrenheit is equal to {celsius} in degree")'''
+Without using any string methods, try to print the following:
 
-#python program to display calender 
-'''import calendar
 
-year = int(input("enter year:"))
-month=int(input("enter month of the year:"))
+Note that "" represents the consecutive values in between.
 
-cal =  calendar.month(year , month)
-print(cal)'''
+Example
 
-''' to slove quadratic equation '''
-'''import math
-#-b**2-4*a*c = discriment
-#input coefficent 
-a = int(input("enter a value"))
-b = int(input("enter b value"))
-c = int(input("enter c value"))
-#calculate the discriminant
-discriment = b**2 - 4*a*c
-# check if the discrimant is postive, nigative, or zero 
-if discriment > 0:
-    #two real and distict roots
-    root1 = (-b+math.squrt(discriment)/(2*a))
-    root2 = (-b+math.squrt(discriment)/(2*a))
-    print(f"root 1 : {root1}")
-    print(f"Root 2: {root2}")
-elif discriment == 0 :
-    # one real root (repeated)
-    root = -b/(2*a)
-    print(f"root : {root}")
-else :
-    #complex roots
-    real_part=-b/(2*a)
-    imaginary_part = math.sqrt(abs(discriment))/2*a
-    print(f"Root 1 : {real_part}+{imaginary_part}i")
-    print(f"Root 2 : {real_part}-{imaginary_part}i")'''
-# swap two varibles without temp variable
-'''a = 5
-b= 10 
-#swapping withot a temporaryvariable 
-a,b = b,a
+Print the string .
 
-print("after swapping")
-print("a=", a)
-print("b=", b)'''
+Input Format
 
-# to check if a number is +ve ,-ve, 0
-'''num = float(input("enter a number"))
-if(num>0):
-    print("postive")
-elif(num<0):
-    print("negitive")
-else:
-    print("zero")'''
+The first line contains an integer .
 
-#check even or odd 
-num = int(input("enter a number "))
-if num%2 == 0:
-    print("this is even")
-else:
-    print("odd")            
+Constraints
+
+
+Output Format
+
+Print the list of integers from  through  as a string, without spaces.
+
+Sample Input 0
+
+3
+Sample Output 0
+
+123'''
+
+#code
+'''if __name__ == '__main__':
+    n = int(input(""))
+    for i in range (1, n+1):
+      print(i,end="")'''
+#p2:
+'''Let's learn about list comprehensions! You are given three integers  and  representing the dimensions of a cuboid along with an integer . Print a list of all possible coordinates given by  on a 3D grid where the sum of  is not equal to . Here, . Please use list comprehensions rather than multiple loops, as a learning exercise.
+
+Example
 
 
 
 
+All permutations of  are:
+.
+
+Print an array of the elements that do not sum to .
+
+
+Input Format
+
+Four integers  and , each on a separate line.
+
+Constraints
+
+Print the list in lexicographic increasing order.
+
+Sample Input 0
+
+1
+1
+1
+2
+Sample Output 0
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
+Explanation 0
+
+Each variable  and  will have values of  or . All permutations of lists in the form .
+Remove all arrays that sum to  to leave only the valid permutations.
+
+Sample Input 1
+
+2
+2
+2
+2
+Sample Output 1
+
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [0, 1, 2], [0, 2, 1], [0, 2, 2], [1, 0, 0], [1, 0, 2], [1, 1, 1], [1, 1, 2], [1, 2, 0], [1, 2, 1], [1, 2, 2], [2, 0, 1], [2, 0, 2], [2, 1, 0], [2, 1, 1], [2, 1, 2], [2, 2, 0], [2, 2, 1], [2, 2, 2]]'''
+#code
+'''if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    result = [[i,j,k] for i in range(x+1)
+    for j in range(y+1)
+    for k in range(z+1)
+    if(i+j+k)!=n]
+    
+    print(result)
+   
+        '''
+#p3
+'''Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
+
+Input Format
+
+The first line contains . The second line contains an array   of  integers each separated by a space.
+
+Constraints
+
+Output Format
+
+Print the runner-up score.
+
+Sample Input 0
+
+5
+2 3 6 6 5
+Sample Output 0
+
+5
+Explanation 0
+
+Given list is . The maximum score is , second maximum is . Hence, we print  as the runner-up score.
+
+Language
+Python 3
+More
+123456789101112
+
+
+Line: 12 Col: 1
+
+Test against custom input
+Blog'''
+#code
+'''if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    
+  
+
+    arr = list(set(arr))     # remove duplicates
+    arr.sort()               # sort the list
+
+print(arr[-2])           # runner-up score
+
+'''
